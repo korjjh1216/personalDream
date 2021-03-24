@@ -1,7 +1,6 @@
 package com.example.demo.chat.domain;
 
 import javax.persistence.Column;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -18,8 +17,8 @@ public class Chat {
 	@Column(name = "board_no")
 	private long boardNo;
 
-	@Column(name ="messages")
-	private String messages;
+	@Column(name ="button")
+	private String button;
 
 	@Column(name = "keyboard")
 	private String keyboard;
