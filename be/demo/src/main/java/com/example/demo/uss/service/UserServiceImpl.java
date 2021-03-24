@@ -14,9 +14,15 @@ import lombok.RequiredArgsConstructor;
 public class UserServiceImpl extends AbstractService<User> implements UserService {
 
     @Override
-    public Optional<User> findOne() {
+    public long count() {
         // TODO Auto-generated method stub
-        return null;
+        return 0;
+    }
+
+    @Override
+    public boolean existsById(long id) {
+        // TODO Auto-generated method stub
+        return false;
     }
 
     @Override
@@ -26,21 +32,9 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
     }
 
     @Override
-    public Optional<User> findById(long id) {
+    public Optional<User> findOne() {
         // TODO Auto-generated method stub
         return null;
-    }
-
-    @Override
-    public List<User> findAllById(Iterable<User> ids) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public long count() {
-        // TODO Auto-generated method stub
-        return 0;
     }
 
     @Override
@@ -56,21 +50,10 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
     }
 
     @Override
-    public boolean existsById(long id) {
-        // TODO Auto-generated method stub
-        return false;
-    }
-
-    @Override
-    public List<User> saveAll(Iterable<User> entities) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
     public User save(User entity) {
         // TODO Auto-generated method stub
         return null;
     }
+
     
 }

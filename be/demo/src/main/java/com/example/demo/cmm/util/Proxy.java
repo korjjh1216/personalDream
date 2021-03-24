@@ -12,25 +12,30 @@ import com.example.demo.uss.domain.User;
 @Component
 public class Proxy {
 	public static Consumer<String> print = System.out::print;
-	public  Function<Object, String> intToString = String::valueOf;
-	public  Function<String, Integer> strToInt = Integer::parseInt; 
 	
-	public Function<Double,Double> doubleabs = Math :: abs;
-	public Function<Float,Float> floatabs = Math :: abs;
-	public Function<Integer, Integer> intabs = Math :: abs;
-	public Function<Long, Long> longabs = Math :: abs;
+	public static Function<Object, String> toString = String::valueOf;
+	public static Function<String, Integer> strToInteger = Integer::parseInt;
 	
-	public Function<Double, Double> doubleceil = Math :: ceil;
-	public Function<Double, Double> doublefloor = Math :: floor;
+	public static Function<Integer, Integer> intAbs = Math::abs;
+	public static Function<Double, Double> doubleAbs = Math::abs;
+	public static Function<Float, Float> floatAbs = Math::abs;
+	public static Function<Long, Long> longAbs = Math::abs;
+
+	public static Function<Double, Double> ceil = Math::ceil;
+	public static Function<Double, Double> floor = Math::floor;
+
+	public static BiFunction<Integer, Integer, Integer> intMax = (f, s) -> Math.max(f, s);
+	public static BiFunction<Double, Double, Double> doubleMax = (f, s) -> Math.max(f, s);
+	public static BiFunction<Long, Long, Long> longMax = (f, s) -> Math.max(f, s);
+	public static BiFunction<Float, Float, Float> floatMax = (f, s) -> Math.max(f, s);
 	
-	public static BiFunction<Double,Double, Double> doublemax = Math :: max;
-	public static BiFunction<Double,Double, Double> doublemin = Math :: min;
+	public static BiFunction<Integer, Integer, Integer> intMin = Math::min;
+	public static BiFunction<Long, Long, Long> longMin = Math::min; 
+	public static BiFunction<Double, Double, Double> doubleMin = Math::min; 
+	public static BiFunction<Float, Float, Float> floatMin = Math::min; 
 	
-	public static Supplier<Double> Rand = Math :: random;
-	public static BiFunction<Integer,Integer,Integer> rangeRandom = (t,u) -> ((int)(Math.random()*(u-t))+t);
-			
-	public Function<Double, Double> rint = Math :: rint;
-	public Function<Double, Long> round = Math :: round;
-	
-	public Supplier<User> newUser = User :: new;
+	public static Supplier<Double> random = Math::random;
+	public static BiFunction<Integer, Integer, Integer> rangeRandom = (f, s) -> (int)(Math.random() * (s - f)) + f + 1;
+
+	public static Function<Double, Double> rint = Math::rint;
 }

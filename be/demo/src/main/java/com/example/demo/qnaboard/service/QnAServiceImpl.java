@@ -15,10 +15,8 @@ import lombok.RequiredArgsConstructor;
 @Service @RequiredArgsConstructor
 public class QnAServiceImpl extends AbstractService<QnA> implements QnAService {
 
-    //private final QnARepository repo;
-
     @Override
-    public void register(QnADto board) throws Exception {
+    public void create(QnADto board) throws Exception {
         // TODO Auto-generated method stub
         
     }
@@ -48,9 +46,15 @@ public class QnAServiceImpl extends AbstractService<QnA> implements QnAService {
     }
 
     @Override
-    public Optional<QnA> findOne() {
+    public long count() {
         // TODO Auto-generated method stub
-        return null;
+        return 0;
+    }
+
+    @Override
+    public boolean existsById(long id) {
+        // TODO Auto-generated method stub
+        return false;
     }
 
     @Override
@@ -60,21 +64,9 @@ public class QnAServiceImpl extends AbstractService<QnA> implements QnAService {
     }
 
     @Override
-    public Optional<QnA> findById(long id) {
+    public Optional<QnA> findOne() {
         // TODO Auto-generated method stub
         return null;
-    }
-
-    @Override
-    public List<QnA> findAllById(Iterable<QnA> ids) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public long count() {
-        // TODO Auto-generated method stub
-        return 0;
     }
 
     @Override
@@ -90,21 +82,8 @@ public class QnAServiceImpl extends AbstractService<QnA> implements QnAService {
     }
 
     @Override
-    public boolean existsById(long id) {
-        // TODO Auto-generated method stub
-        return false;
-    }
-
-    @Override
-    public List<QnA> saveAll(Iterable<QnA> entities) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
     public QnA save(QnA entity) {
         // TODO Auto-generated method stub
         return null;
     }
-    
 }
