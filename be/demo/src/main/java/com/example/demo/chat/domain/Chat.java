@@ -1,5 +1,8 @@
 package com.example.demo.chat.domain;
 
+
+import java.util.Date;
+
 import javax.persistence.Column;
 
 import javax.persistence.Entity;
@@ -31,7 +34,7 @@ public class Chat {
 	private String delete;
 
 	@Column(name = "regdate")
-	private String regdate;
+	private Date regdate;
 
 		
 

@@ -1,7 +1,7 @@
 package com.example.demo.chat.domain;
 
 import java.io.Serializable;
-
+import java.util.Date;
 
 import org.springframework.stereotype.Component;
 
@@ -18,6 +18,6 @@ public class ChatDto implements Serializable{
 	private String keyboard;
 	private String delete;
 	private String username;
-	private String regdate;
+	private Date regdate;
 }
 

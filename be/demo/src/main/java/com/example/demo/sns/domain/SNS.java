@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "boards")
+@Table(name = "snsboards")
 public class SNS {
     
     @Id
@@ -14,7 +14,7 @@ public class SNS {
     @Column(name = "username")
     private String username;
     
-    @Column(name = "board_content")
+    @Column(name = "sns_content")
     private String board_content;
 
     @Column(name = "regdate")

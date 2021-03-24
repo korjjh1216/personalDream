@@ -1,16 +1,16 @@
 package com.example.demo.qnaboard.controller;
 
-import com.example.demo.qnaboard.service.QnAServiceImpl;
 
-import org.springframework.stereotype.Controller;
+import com.example.demo.qnaboard.service.QnAService;
+
+import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 
 @Log
-@Controller
+@RestController
 @RequiredArgsConstructor
 public class QnAController {
-    private final QnAServiceImpl service;
-    
+   // private final QnAService service;
 }

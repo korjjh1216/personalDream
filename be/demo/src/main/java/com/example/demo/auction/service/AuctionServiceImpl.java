@@ -9,5 +9,5 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class AuctionServiceImpl {
-    private final AuctionRepository repo;
+  //  private final AuctionRepository repo;
 }

@@ -34,15 +34,4 @@ public class Auction {
     @Column(name="bid")
     private String bid;
 
-    @Column(name="user_list")
-    private List<User> userList;
-
-    @Column(name="user")
-    private User user;
-    
-    @Column(name="stock")
-    private Item item;
-
-    @Column(name="chat")
-    private Chat chat;
 }
