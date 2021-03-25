@@ -13,7 +13,7 @@ public class QnA {
     @Id
     @GeneratedValue
     @Column(name = "board_no")
-    private long board_no;
+    private long boardNo;
 
     @Column(name = "title")
     private String title;
@@ -21,10 +21,10 @@ public class QnA {
     @Column(name = "content")
     private String content;
 
-    @Column(name = "username")
-    private String username;
+    @Column(name = "use_name")
+    private String userName;
 
-    @Column(name = "regdate")
-    private Date regdate;
+    @Column(name = "reg_date")
+    private Date regDate;
 
 }

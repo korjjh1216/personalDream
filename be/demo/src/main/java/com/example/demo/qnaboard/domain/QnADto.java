@@ -11,9 +11,9 @@ import lombok.Data;
 @Data
 public class QnADto implements Serializable {
     private static final long SerialVersionUID = 1L;
-    private long board_no;
+    private long boardNo;
     private String title;
     private String content;
-    private String username;
-    private Date regdate;
+    private String userName;
+    private Date regDate;
 }

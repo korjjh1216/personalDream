@@ -14,76 +14,66 @@ import lombok.RequiredArgsConstructor;
 
 @Service @RequiredArgsConstructor
 public class QnAServiceImpl extends AbstractService<QnA> implements QnAService {
+    private final QnARepository qnaRepo;
 
     @Override
-    public void create(QnADto board) throws Exception {
+    public void create(QnA qna) {
         // TODO Auto-generated method stub
-        
+        return qnaRepo.create(qna);
     }
 
     @Override
-    public QnADto read(Long board_no) throws Exception {
+    public QnA read(Long boardNo) {
         // TODO Auto-generated method stub
-        return null;
+        return qnaRepo.read(boardNo);
     }
 
     @Override
-    public void modify(QnADto board) throws Exception {
+    public List<QnA> list() {
         // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void remove(Long board_no) throws Exception {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public List<QnADto> list() throws Exception {
-        // TODO Auto-generated method stub
-        return null;
+        return qnaRepo.list();
     }
 
     @Override
     public long count() {
         // TODO Auto-generated method stub
-        return 0;
+        return qnaRepo.count();
     }
 
     @Override
     public boolean existsById(long id) {
         // TODO Auto-generated method stub
-        return false;
+        return qnaRepo.existsById(id);
     }
 
     @Override
     public List<QnA> findAll() {
         // TODO Auto-generated method stub
-        return null;
+        return qnaRepo.findAll();
     }
 
     @Override
     public Optional<QnA> findOne() {
         // TODO Auto-generated method stub
-        return null;
+        return qnaRepo.findOne(null);
     }
 
     @Override
     public void deleteById(long id) {
         // TODO Auto-generated method stub
+        return qnaRepo.deleteById(id);
         
     }
 
     @Override
     public QnA getOne(long id) {
         // TODO Auto-generated method stub
-        return null;
+        return qnaRepo.getOne(id);
     }
 
     @Override
     public QnA save(QnA entity) {
         // TODO Auto-generated method stub
-        return null;
+        return qnaRepo.save(entity);
     }
 }
