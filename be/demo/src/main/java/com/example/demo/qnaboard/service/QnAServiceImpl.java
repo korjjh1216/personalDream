@@ -11,7 +11,8 @@ import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
 
-@Service @RequiredArgsConstructor
+@Service
+@RequiredArgsConstructor
 public class QnAServiceImpl extends AbstractService<QnA> implements QnAService {
     private final QnARepository qnaRepo;
 
@@ -19,7 +20,6 @@ public class QnAServiceImpl extends AbstractService<QnA> implements QnAService {
     @Override
     public void create(QnA qna) {
         // TODO Auto-generated method stub
-        
     }
 
     @Override
@@ -61,7 +61,7 @@ public class QnAServiceImpl extends AbstractService<QnA> implements QnAService {
 
     @Override
     public QnA save(QnA entity) {
-        // TODO Auto-generated method stub
+        System.out.println(entity.toString());
         return qnaRepo.save(entity);
     }
 

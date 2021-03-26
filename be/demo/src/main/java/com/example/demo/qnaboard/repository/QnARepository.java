@@ -11,7 +11,5 @@ interface QnACustomRepository{
 }
 
 public interface QnARepository extends JpaRepository<QnA, Long>,QnACustomRepository {
-    @Query(value = "SELECT * FROM boards i WHERE i.board_no = :boardNo", nativeQuery = true)
-	public void create(@Param("boardNo") QnA qna);
-
+   
 }

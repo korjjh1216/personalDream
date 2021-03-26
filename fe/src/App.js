@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {Route} from 'react-router-dom'
+import Home from './cmm/container/Home'
+import List from './qnaboard/container/List'
+import Create from  './qnaboard/container/Create'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    return(<>
+    <Route path="/" component={ Home } exact/>
+     <Route path = "/List" component={List} QnABoardList/>
+     <Route path = "/Create" component={Create} QnABoardAdd/>
+    
+    </>)
 }
 
-export default App;
+export default App
