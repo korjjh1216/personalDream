@@ -4,7 +4,7 @@ package com.example.demo.qnaboard.controller;
 import java.util.List;
 
 import com.example.demo.qnaboard.domain.QnA;
-import com.example.demo.qnaboard.service.QnAService;
+import com.example.demo.qnaboard.service.QnAServiceImpl;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +18,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @RequestMapping(value="/qna")
 public class QnAController {
-   private final QnAService service;
+   private final QnAServiceImpl service;
    
    @GetMapping("/create")
    public ResponseEntity<?> create(QnA qna){
@@ -27,24 +27,10 @@ public class QnAController {
       return new ResponseEntity<>(HttpStatus.OK);
    }
 
-   @GetMapping("/detail/itemNO")
-	public ResponseEntity<QnA> read(long boardNo) {
-		System.out.println("getQnABoardRead()");
-
-		return new ResponseEntity<>(QnAService.read(boardNo), HttpStatus.OK);
-	}
-
    @GetMapping("/list")
-	public ResponseEntity<List<QnA>> list(){
-		System.out.println("getQnAList()");
+	public ResponseEntity<List<QnA>> findAll(){
+		System.out.println("getQnAFindAll()");
 
-		return new ResponseEntity<>(QnAService.list(), HttpStatus.OK);
-	}
-
-   @GetMapping("/count")
-	public ResponseEntity<Long> count(){
-		System.out.println("getQnACount()");
-
-		return new ResponseEntity<>(QnAService.count(), HttpStatus.OK);
+		return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
 	}
 }

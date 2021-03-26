@@ -3,9 +3,7 @@ package com.example.demo.qnaboard.domain;
 import java.util.Date;
 
 import javax.persistence.*;
-import lombok.Data;
 
-@Data
 @Entity
 @Table(name = "boards")
 public class QnA {

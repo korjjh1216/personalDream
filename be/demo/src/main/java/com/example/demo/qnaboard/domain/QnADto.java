@@ -7,13 +7,13 @@ import org.springframework.stereotype.Component;
 
 import lombok.Data;
 
-@Component
 @Data
+@Component
 public class QnADto implements Serializable {
-    private static final long SerialVersionUID = 1L;
-    private long boardNo;
-    private String title;
-    private String content;
-    private String userName;
-    private Date regDate;
+    private static final long serialVersionUID = 1L;
+    public long boardNo;
+    public String title;
+    public String content;
+    public String userName;
+    public Date regDate;
 }

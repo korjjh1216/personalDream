@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import com.example.demo.cmm.service.AbstractService;
 import com.example.demo.qnaboard.domain.QnA;
-import com.example.demo.qnaboard.domain.QnADto;
 import com.example.demo.qnaboard.repository.QnARepository;
 
 import org.springframework.stereotype.Service;
@@ -16,22 +15,11 @@ import lombok.RequiredArgsConstructor;
 public class QnAServiceImpl extends AbstractService<QnA> implements QnAService {
     private final QnARepository qnaRepo;
 
+
     @Override
     public void create(QnA qna) {
         // TODO Auto-generated method stub
-        return qnaRepo.create(qna);
-    }
-
-    @Override
-    public QnA read(Long boardNo) {
-        // TODO Auto-generated method stub
-        return qnaRepo.read(boardNo);
-    }
-
-    @Override
-    public List<QnA> list() {
-        // TODO Auto-generated method stub
-        return qnaRepo.list();
+        
     }
 
     @Override
@@ -43,7 +31,7 @@ public class QnAServiceImpl extends AbstractService<QnA> implements QnAService {
     @Override
     public boolean existsById(long id) {
         // TODO Auto-generated method stub
-        return qnaRepo.existsById(id);
+        return false;
     }
 
     @Override
@@ -61,7 +49,7 @@ public class QnAServiceImpl extends AbstractService<QnA> implements QnAService {
     @Override
     public void deleteById(long id) {
         // TODO Auto-generated method stub
-        return qnaRepo.deleteById(id);
+        qnaRepo.deleteById(id);
         
     }
 
@@ -76,4 +64,6 @@ public class QnAServiceImpl extends AbstractService<QnA> implements QnAService {
         // TODO Auto-generated method stub
         return qnaRepo.save(entity);
     }
+
+
 }
