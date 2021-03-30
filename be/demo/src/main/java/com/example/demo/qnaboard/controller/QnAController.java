@@ -44,4 +44,9 @@ public class QnAController {
 	   return new ResponseEntity<>(service.findById(id),HttpStatus.OK);
    }
    
+   @PutMapping("/modify/{boardNo}")
+   public ResponseEntity<QnA> modify(@PathVariable("boardNo") long boardNo,@RequestBody QnA qna){
+	   return new ResponseEntity<QnA>(service.save(qna),HttpStatus.OK);
+   }
+   
 }

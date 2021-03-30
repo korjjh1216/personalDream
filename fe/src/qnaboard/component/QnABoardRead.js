@@ -3,13 +3,13 @@ import React, { useState, useEffect} from "react"
 import { Link } from "react-router-dom"
 import List from "../container/List"
 
-const QnABoardRead = () =>{
+const QnABoardRead = (props) =>{
     const [read, setRead] = useState({})
     // console.log(JSON.stringify(props))
 
     const fetchOne = () => {
         axios
-            .get(`http://localhost:8080/qna/read/${localStorage.getItem('select')}`)
+            .get(`http://localhost:8080/qna/read/${props.match.params.id}`)
             .then((res) => {
                 console.log(res);
                 setRead(res.data);
@@ -46,7 +46,7 @@ const QnABoardRead = () =>{
                     </tr>
             </tbody>
             </table>
-            <button>수정하기</button>
+            <button>< Link to ={`/QnABoardModify/${read.boardNo}`}>수정하기</Link></button>
             <button>삭제하기</button>
             <Link to = {`/List`}><button>목록으로</button></Link>
         </div>
