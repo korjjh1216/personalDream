@@ -38,7 +38,7 @@ public class QnAController {
    
    @GetMapping("/read/{id}")
    public ResponseEntity<Optional<QnA>> findById(@PathVariable long id){
-	   System.out.println("findQnAOne");
+	   System.out.println("findQnAOne()");
 	   System.out.println("======= 게시글 리딩중 =======");
 	   
 	   return new ResponseEntity<>(service.findById(id),HttpStatus.OK);

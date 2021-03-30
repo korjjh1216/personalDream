@@ -65,5 +65,11 @@ public class QnAServiceImpl extends AbstractService<QnA> implements QnAService {
         return qnaRepo.save(entity);
     }
 
+	@Override
+	public void delete(QnA entity) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }

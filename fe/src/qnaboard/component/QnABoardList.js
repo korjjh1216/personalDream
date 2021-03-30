@@ -39,7 +39,9 @@ const QnABoardList = () => {
                 <tbody>
                         <tr key={qna.boardNo}>
                         <th align="center" width="80">{qna.boardNo}</th>
-                        <th align="center" width="320">< Link to ={`/QnABoardRead/${qna.boardNo}`}>{qna.title}</ Link></th>
+                        <th align="center" width="320">< Link to ={`/QnABoardRead/${qna.boardNo}`} 
+                                onClick={() => {localStorage.setItem
+                                    ('select', `${qna.boardNo}`)}}>{qna.title}</Link></th>
                         <th align="center" width="100">{qna.userName}</th>
                         <th align="center" width="180">{qna.regDate}</th>
                         </tr>  

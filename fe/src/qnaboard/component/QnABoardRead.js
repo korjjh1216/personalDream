@@ -1,14 +1,15 @@
 import axios from "axios"
 import React, { useState, useEffect} from "react"
 import { Link } from "react-router-dom"
+import List from "../container/List"
 
-const QnABoardRead = (props) =>{
+const QnABoardRead = () =>{
     const [read, setRead] = useState({})
-    console.log(JSON.stringify(props))
+    // console.log(JSON.stringify(props))
 
     const fetchOne = () => {
         axios
-            .get(`http://localhost:8080/qna/read/${props.match.params.id}`)
+            .get(`http://localhost:8080/qna/read/${localStorage.getItem('select')}`)
             .then((res) => {
                 console.log(res);
                 setRead(res.data);
@@ -22,8 +23,8 @@ const QnABoardRead = (props) =>{
 
 
     return  (
-    <form>
-        <div className="container">
+        <form>
+        <div>
             <h1  align="center">게시글 보기</h1>
             <table align="center">
             <thead>
@@ -47,7 +48,7 @@ const QnABoardRead = (props) =>{
             </table>
             <button>수정하기</button>
             <button>삭제하기</button>
-            <link to = {`/QnABoardList`}><button>목록으로</button></link>
+            <Link to = {`/List`}><button>목록으로</button></Link>
         </div>
     </form>
     );
