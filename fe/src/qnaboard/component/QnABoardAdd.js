@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios'
 
-const QnABoardAdd =() =>{
+const QnABoardAdd =(props) =>{
     const [inputs, setInputs] = useState({
                 title: "",
                 content: "",
@@ -28,6 +28,7 @@ const QnABoardAdd =() =>{
             })
             .then((res) => {
                 console.log(res);
+                props.history.push(`/List`)
             })
             .catch((err) => console.log(err));
     };    

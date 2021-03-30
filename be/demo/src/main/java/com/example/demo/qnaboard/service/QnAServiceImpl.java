@@ -41,9 +41,9 @@ public class QnAServiceImpl extends AbstractService<QnA> implements QnAService {
     }
 
     @Override
-    public Optional<QnA> findOne() {
+    public Optional<QnA> findById(long id) {
         // TODO Auto-generated method stub
-        return qnaRepo.findOne(null);
+        return qnaRepo.findById(id);
     }
 
     @Override

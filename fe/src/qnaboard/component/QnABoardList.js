@@ -1,10 +1,9 @@
 import axios from "axios"
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect} from "react"
 import { Link } from "react-router-dom"
 
 const QnABoardList = () => {
-    const [list, setList] = useState([])
-
+    const [List, setList] = useState([])
     const fetchList = () => {
         axios
             .get("http://localhost:8080/qna/list")
@@ -18,6 +17,9 @@ const QnABoardList = () => {
     useEffect(() => {
         fetchList();
     }, []);    
+
+    
+    
 
     return  (
     <form>
@@ -33,11 +35,11 @@ const QnABoardList = () => {
                         <th align="center" width="180">등록일자</th>
                     </tr>
                 </thead>
-                {list.map((qna)=> [
+                {List.map((qna)=> [
                 <tbody>
-                        <tr>
+                        <tr key={qna.boardNo}>
                         <th align="center" width="80">{qna.boardNo}</th>
-                        <th align="center" width="320">{qna.title}</th>
+                        <th align="center" width="320">< Link to ={`/QnABoardRead/${qna.boardNo}`}>{qna.title}</ Link></th>
                         <th align="center" width="100">{qna.userName}</th>
                         <th align="center" width="180">{qna.regDate}</th>
                         </tr>  

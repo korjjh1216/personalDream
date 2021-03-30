@@ -2,6 +2,7 @@ package com.example.demo.qnaboard.controller;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import com.example.demo.qnaboard.domain.QnA;
 import com.example.demo.qnaboard.service.QnAServiceImpl;
@@ -34,4 +35,13 @@ public class QnAController {
 
 		return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
 	}
+   
+   @GetMapping("/read/{id}")
+   public ResponseEntity<Optional<QnA>> findById(@PathVariable long id){
+	   System.out.println("findQnAOne");
+	   System.out.println("======= 게시글 리딩중 =======");
+	   
+	   return new ResponseEntity<>(service.findById(id),HttpStatus.OK);
+   }
+   
 }
