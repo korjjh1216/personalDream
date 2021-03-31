@@ -14,7 +14,7 @@ import lombok.ToString;
 public class QnA {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "board_no")
     private long boardNo;
 

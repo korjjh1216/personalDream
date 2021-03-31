@@ -1,7 +1,6 @@
 package com.example.demo.qnaboard.controller;
 
 
-import java.util.List;
 import java.util.Optional;
 
 import com.example.demo.qnaboard.domain.QnA;
@@ -46,7 +45,14 @@ public class QnAController {
    
    @PutMapping("/modify/{boardNo}")
    public ResponseEntity<QnA> modify(@PathVariable("boardNo") long boardNo,@RequestBody QnA qna){
+	   System.out.println("Modify()");
 	   return new ResponseEntity<QnA>(service.save(qna),HttpStatus.OK);
    }
    
+   @DeleteMapping("/delete/{id}")
+   public ResponseEntity<QnA> doDelete(@PathVariable long id){
+	   System.out.println("doDELETE()");
+	   service.deleteById(id);
+	   return new ResponseEntity<QnA>(HttpStatus.OK);
+   }
 }
