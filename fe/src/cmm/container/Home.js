@@ -5,7 +5,8 @@ const Home = () => {
     const style ={width: 150, margin: "0 auto"}
     return(<>
     <div style = {style}><h1>Home</h1>
-	<Link to ={"List"}>게시판</Link>
+	<Link to ={"List"}>게시판</Link><br/>
+    <Link to = {"UserList"}>회원목록</Link>
     </div>
     </>)
 }

@@ -10,13 +10,13 @@ import lombok.Data;
 @Data
 public class UserDto implements Serializable {
     private static final long serialVersionUID = 1L;
-	private String user_no;
-	private String username;
+	private String userNo;
+	private String userName;
 	private String password;
 	private String name;
 	private String email;
 	private String birthday;
 	private String gender;
-	private String regdate;
-	private String phone_number;
+	private String regDate;
+	private String phoneNumber;
 }

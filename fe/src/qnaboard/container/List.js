@@ -10,6 +10,7 @@ const List = () => (
         <button>
             <Link to ={"/Create"}>등록</Link>
         </button>
+        <Link to = {`/`}><button>홈으로</button></Link>
     </>
 )
 

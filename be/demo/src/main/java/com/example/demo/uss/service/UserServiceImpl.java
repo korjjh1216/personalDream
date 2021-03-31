@@ -5,16 +5,20 @@ import java.util.Optional;
 
 import com.example.demo.cmm.service.AbstractService;
 import com.example.demo.uss.domain.User;
-
-import org.springframework.stereotype.Service;
+import com.example.demo.uss.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
-@Service @RequiredArgsConstructor
-public class UserServiceImpl extends AbstractService<User> implements UserService {@Override
+@Service
+@RequiredArgsConstructor
+public class UserServiceImpl extends AbstractService<User> implements UserService {
+	private final UserRepository userRepo;
+
+	@Override
 	public long count() {
 		// TODO Auto-generated method stub
-		return 0;
+		return userRepo.count();
 	}
 
 	@Override
@@ -26,40 +30,36 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
 	@Override
 	public List<User> findAll() {
 		// TODO Auto-generated method stub
-		return null;
+		return userRepo.findAll();
 	}
 
 	@Override
 	public void deleteById(long id) {
 		// TODO Auto-generated method stub
-		
+		userRepo.deleteById(id);
 	}
 
 	@Override
 	public User getOne(long id) {
 		// TODO Auto-generated method stub
-		return null;
+		return userRepo.getOne(id);
 	}
 
 	@Override
 	public User save(User entity) {
 		// TODO Auto-generated method stub
-		return null;
+		return userRepo.save(entity);
 	}
 
 	@Override
 	public Optional<User> findById(long id) {
 		// TODO Auto-generated method stub
-		return null;
+		return userRepo.findById(id);
 	}
 
 	@Override
 	public void delete(User entity) {
 		// TODO Auto-generated method stub
-		
+		userRepo.delete(entity);
 	}
-
-    
-
-    
 }

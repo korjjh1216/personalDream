@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.*;
 
+import com.example.demo.uss.domain.User;
+
 import lombok.Getter;
 import lombok.ToString;
 
@@ -24,10 +26,12 @@ public class QnA {
     @Column(name = "content")
     private String content;
 
-    @Column(name = "use_name")
+    @Column(name = "user_name",nullable = false)
     private String userName;
 
     @Column(name = "reg_date")
     private Date regDate;
 
+    @ManyToOne
+    private User user;
 }
