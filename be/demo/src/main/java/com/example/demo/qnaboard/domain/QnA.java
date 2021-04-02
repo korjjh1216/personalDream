@@ -32,6 +32,6 @@ public class QnA {
     @Column(name = "reg_date")
     private Date regDate;
 
-    @ManyToOne
-    private User user;
+//    @ManyToOne
+//    private User user;
 }

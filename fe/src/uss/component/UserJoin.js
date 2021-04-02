@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import axios from 'axios'
 
 const UserJoin =(props) =>{
-    const [inputs, setInputs] = useState({
-                userName: "",
+    const [inputs,setInputs] = useState({
+                 username: "",
                 password:"",
                 name:"",
                 email:"",
@@ -13,7 +13,7 @@ const UserJoin =(props) =>{
                 phoneNumber:""
             });
 
-    const { userName, password, name,email,birthday,gender,phoneNumber} = inputs;
+    const { username, password, name,email,birthday,gender,phoneNumber} = inputs;
 
     const handleChange = (e) => {
         const { value, name } = e.target;
@@ -26,7 +26,7 @@ const UserJoin =(props) =>{
         e.preventDefault();
         axios
             .post("http://localhost:8080/user", {
-                userName,
+                username,
                 password, 
                 name,
                 email,
@@ -45,7 +45,7 @@ const UserJoin =(props) =>{
         return(
         <form onSubmit={handleSubmit} method="post" align = "center">
                 <h2> 회원 정보를 입력해주세요! </h2>
-                유저 ID :  <input type="text" onChange={handleChange} name="userName" value={userName}/><br/><br/>
+                유저 ID :  <input type="text" onChange={handleChange} name="username" value={username}/><br/><br/>
                 비밀번호:  <input type="password" onChange={handleChange} name="password" value={password}/><br/><br/>
                 이    름:  <input type="text" onChange={handleChange} name="name" value={name}/><br/><br/>
                 이 메 일:  <input type="email" onChange={handleChange} name="email" value={email}/><br/><br/>

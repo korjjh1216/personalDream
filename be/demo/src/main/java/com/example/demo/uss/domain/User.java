@@ -13,14 +13,14 @@ import lombok.Data;
 @Entity
 @Table( name = "users")
 public class User {
-	
+	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="user_no")
 	private long userNo;
     
-    @Id
-	@Column(name = "user_name",nullable = false) 
-	private String userName;
+   
+	@Column(name = "username") 
+	private String username;
 
 	@Column(name = "password") 
 	private String password;
@@ -44,6 +44,6 @@ public class User {
     @Column(name = "phone_number")
 	private String phoneNumber;
     
-    @OneToMany(mappedBy="user")
-    private List<QnA> qnaList; 
+//    @OneToMany(mappedBy="user")
+//    private List<QnA> qnaList; 
 }

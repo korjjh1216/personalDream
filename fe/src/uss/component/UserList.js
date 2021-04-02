@@ -45,7 +45,7 @@ const UserList = () => {
                 <tbody>
                         <tr key={user.userNo}>
                         <th align="center" width="80">{user.userNo}</th>
-                        <th align="center" width="320">{user.userName}</th>
+                        <th align="center" width="320">{user.username}</th>
                         <th align="center" width="100">{user.password}</th>
                         <th align="center" width="180">{user.name}</th>
                         <th align="center" width="180">{user.email}</th>
@@ -58,9 +58,6 @@ const UserList = () => {
             </table>
            
         </div>
-        <button>
-            <Link to ={"/UserJoin"}>등록</Link>
-        </button>
         <Link to = {`/`}><button>홈으로</button></Link>
     </form>
     )

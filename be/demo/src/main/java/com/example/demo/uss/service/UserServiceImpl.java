@@ -62,4 +62,12 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
 		// TODO Auto-generated method stub
 		userRepo.delete(entity);
 	}
+
+	@Override
+	public User login(String username, String password) {
+		// TODO Auto-generated method stub
+		return userRepo.login(username, password);
+	}
+		
+	
 }
