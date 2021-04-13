@@ -34,13 +34,11 @@ public class UserController {
     }
     
     @PostMapping("/login")
-    public ResponseEntity<User> Userlogin(@RequestBody User user){
+    public ResponseEntity<String> Userlogin(@RequestBody User user){
     	System.out.println("get UserLogin()");
     	System.out.println(user.getUsername() + ":" + user.getPassword());
-		User userlogin = service.login(user.getUsername(),user.getPassword());
-    	
-    	System.out.println(user.getUsername() + ":" + user.getPassword());
-    
+    	String userlogin = service.login(user.getUsername(), user.getPassword());
+    	    
     	
     	if(userlogin != null) {
     		System.out.println("=== login success ===");

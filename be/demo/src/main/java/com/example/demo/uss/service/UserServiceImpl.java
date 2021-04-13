@@ -64,7 +64,7 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
 	}
 
 	@Override
-	public User login(String username, String password) {
+	public String login(String username, String password) {
 		// TODO Auto-generated method stub
 		return userRepo.login(username, password);
 	}
